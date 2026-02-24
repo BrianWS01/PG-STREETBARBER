@@ -84,6 +84,16 @@ function renderBarbers() {
 }
 
 /**
+ * Observe newly injected elements for scroll reveal
+ */
+function observeNewElements(observer) {
+  document.querySelectorAll('.reveal:not([data-observed])').forEach(el => {
+    el.setAttribute('data-observed', 'true');
+    observer.observe(el);
+  });
+}
+
+/**
  * Click handler:
  *  - If NOT active: close others, then spin 2x (720deg) + rise to focus
  *  - If already active: unfocus and return to fan position
@@ -137,16 +147,29 @@ function initScrollReveal() {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => {
+    el.setAttribute('data-observed', 'true');
+    observer.observe(el);
+  });
 
   document.querySelectorAll('.reveal-stagger').forEach(container => {
     Array.from(container.children).forEach(child => {
-      child.classList.add('reveal');
+      if (!child.classList.contains('reveal')) {
+        child.classList.add('reveal');
+      }
+      child.setAttribute('data-observed', 'true');
       observer.observe(child);
     });
   });
 
-  document.querySelectorAll('.section-title').forEach(el => observer.observe(el));
+  document.querySelectorAll('.section-title').forEach(el => {
+    if (!el.hasAttribute('data-observed')) {
+      el.setAttribute('data-observed', 'true');
+      observer.observe(el);
+    }
+  });
+
+  return observer;
 }
 
 /* =============================================
@@ -293,12 +316,23 @@ function handleMobileDeck() {
    ============================================= */
 document.addEventListener('DOMContentLoaded', () => {
   renderBarbers();
-  initScrollReveal();
+  const scrollObserver = initScrollReveal();
   initCounters();
   initParticles();
   initHeaderScroll();
   initShimmerCTA();
   initActiveNav();
   handleMobileDeck();
+  
+  // Force immediate reveal for elements already in viewport on load
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      }
+    });
+  }, 100);
+  
   console.log('🔥 Street Barbershop — 4 cartas carregadas');
 });
