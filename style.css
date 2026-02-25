@@ -509,9 +509,9 @@ section {
     width: 20rem;
     /* Compact container for extreme mobile */
     height: 32rem;
-    transform: scale(0.6);
-    /* Even smaller scale for phones */
-    margin: -4rem auto 1rem;
+    transform: scale(0.35);
+    /* Extremely small scale for phones to match user request */
+    margin: -10rem auto -2rem;
   }
 
   .card-slot {
