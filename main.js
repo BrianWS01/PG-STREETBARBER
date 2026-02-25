@@ -135,6 +135,9 @@ function handleCardClick(slot) {
    SCROLL REVEAL
    ============================================= */
 function initScrollReveal() {
+  console.log('👀 Iniciando Scroll Reveal...');
+  const reveals = document.querySelectorAll('.reveal');
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -145,12 +148,22 @@ function initScrollReveal() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.reveal').forEach(el => {
+  reveals.forEach(el => {
     el.setAttribute('data-observed', 'true');
     observer.observe(el);
   });
+
+  // Fallback de Segurança: se após 2.5s algo ainda estiver oculto, força a exibição
+  setTimeout(() => {
+    reveals.forEach(el => {
+      if (!el.classList.contains('visible')) {
+        console.warn('⚠️ Forçando visibilidade via fallback:', el);
+        el.classList.add('visible');
+      }
+    });
+  }, 2500);
 
   document.querySelectorAll('.reveal-stagger').forEach(container => {
     Array.from(container.children).forEach(child => {
@@ -323,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initShimmerCTA();
   initActiveNav();
   handleMobileDeck();
-  
+
   // Force immediate reveal for elements already in viewport on load
   setTimeout(() => {
     document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
@@ -333,6 +346,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, 100);
-  
+
   console.log('🔥 Street Barbershop — 4 cartas carregadas');
 });
