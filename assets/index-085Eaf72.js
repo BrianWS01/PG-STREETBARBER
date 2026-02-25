@@ -1,0 +1,33 @@
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))a(o);new MutationObserver(o=>{for(const s of o)if(s.type==="childList")for(const i of s.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&a(i)}).observe(document,{childList:!0,subtree:!0});function t(o){const s={};return o.integrity&&(s.integrity=o.integrity),o.referrerPolicy&&(s.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?s.credentials="include":o.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function a(o){if(o.ep)return;o.ep=!0;const s=t(o);fetch(o.href,s)}})();const f=[{name:"Ricardo 'The Blade'",role:"Especialista em Fade e Navalha",exp:"12 anos",desc:"Mestre do degradê e navalha. Formou mais de 200 alunos e é referência nacional em técnicas de fade de precisão.",img:"https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=600&auto=format&fit=crop",pip:"♠"},{name:"Alex Urban",role:"Visagismo Masculino",exp:"8 anos",desc:"Pioneiro em técnicas afro e barboterapia. Especialista em visagismo e cortes personalizados para cada rosto.",img:"https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=600&auto=format&fit=crop",pip:"♥"},{name:"Bruno Gold",role:"Barba e Estilo Clássico",exp:"10 anos",desc:"Referência em cortes clássicos e modernos de alto padrão. Design de barba e hidratação profissional.",img:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop",pip:"♦"},{name:"Diego Ferreira",role:"Estilista Sênior & Colorist",exp:"6 anos",desc:"Especialista em coloração masculina e cortes modernos de alto padrão. Referência em tendências internacionais.",img:"https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=600&auto=format&fit=crop",pip:"♣"}];function m(){const r=document.getElementById("barbersDeck");r&&(r.innerHTML=f.map((e,t)=>`
+    <div class="card-slot" data-index="${t}" role="button"
+         aria-label="Focar no barbeiro ${e.name}" tabindex="0">
+      <div class="card-inner">
+
+        <!-- CARD FRONT (visible by default — face up) -->
+        <div class="card-front">
+          <img class="card-front-img" src="${e.img}" alt="${e.name}" loading="lazy">
+          <div class="card-front-info">
+            <h3>${e.name}</h3>
+            <span class="card-role">${e.role} · ${e.exp}</span>
+            <p class="card-desc">${e.desc}</p>
+          </div>
+          <p class="card-close-hint">Clique para focar</p>
+        </div>
+
+        <!-- CARD BACK (hidden behind by default) -->
+        <div class="card-back">
+          <span class="card-pip tl">${e.pip}<br>${e.exp}</span>
+          <span class="card-pip br">${e.pip}<br>${e.exp}</span>
+          <span class="card-back-icon">✂️</span>
+          <div class="card-back-logo">Street<br>Barbershop</div>
+        </div>
+
+      </div>
+    </div>
+  `).join(""),r.querySelectorAll(".card-slot").forEach(e=>{e.addEventListener("click",()=>d(e)),e.addEventListener("keydown",t=>{(t.key==="Enter"||t.key===" ")&&(t.preventDefault(),d(e))})}))}function d(r){const e=r.classList.contains("active");if(document.querySelectorAll(".card-slot.active").forEach(a=>{a.classList.remove("active");const o=a.querySelector(".card-inner");o.style.animation="none",o.offsetHeight,o.style.animation="",o.style.transform=""}),e)return;r.classList.add("active");const t=r.querySelector(".card-inner");t.style.animation="none",t.offsetHeight,t.style.animation="cardSpin2x 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards",t.addEventListener("animationend",()=>{t.style.animation="",t.style.transform="rotateY(360deg)"},{once:!0})}function p(){console.log("👀 Iniciando Scroll Reveal...");const r=document.querySelectorAll(".reveal"),e=new IntersectionObserver(t=>{t.forEach(a=>{a.isIntersecting&&(a.target.classList.add("visible"),a.target.classList.contains("section-title")&&a.target.classList.add("title-visible"),e.unobserve(a.target))})},{threshold:.1});return r.forEach(t=>{t.setAttribute("data-observed","true"),e.observe(t)}),setTimeout(()=>{r.forEach(t=>{t.classList.contains("visible")||(console.warn("⚠️ Forçando visibilidade via fallback:",t),t.classList.add("visible"))})},2500),document.querySelectorAll(".reveal-stagger").forEach(t=>{Array.from(t.children).forEach(a=>{a.classList.contains("reveal")||a.classList.add("reveal"),a.setAttribute("data-observed","true"),e.observe(a)})}),document.querySelectorAll(".section-title").forEach(t=>{t.hasAttribute("data-observed")||(t.setAttribute("data-observed","true"),e.observe(t))}),e}function v(r,e,t=1800,a=""){const s=String(e).includes(".")?1:0,i=performance.now();r.classList.add("counting");function c(n){const l=Math.min((n-i)/t,1),u=1-Math.pow(1-l,3);r.textContent=(u*e).toFixed(s)+a,l<1?requestAnimationFrame(c):(r.textContent=e.toFixed(s)+a,r.classList.remove("counting"))}requestAnimationFrame(c)}function h(){const r=document.querySelectorAll(".rating-number"),e=[{value:4.9,suffix:""},{value:500,suffix:"+"},{value:97,suffix:"%"}],t=document.querySelector(".ratings-bar");if(!t)return;let a=!1;const o=new IntersectionObserver(s=>{s.forEach(i=>{i.isIntersecting&&!a&&(a=!0,r.forEach((c,n)=>{e[n]&&v(c,e[n].value,1800,e[n].suffix)}),o.unobserve(t))})},{threshold:.3});o.observe(t)}function b(){const r=document.getElementById("heroParticles");if(r)for(let e=0;e<18;e++){const t=document.createElement("span"),a=Math.random()*5+3;t.style.cssText=`
+      width:${a}px; height:${a}px;
+      left:${Math.random()*100}%; top:${Math.random()*100}%;
+      animation-delay:${Math.random()*5}s;
+      animation-duration:${4+Math.random()*4}s;
+      opacity:${.2+Math.random()*.5};
+    `,r.appendChild(t)}}function g(){const r=document.querySelector(".header");r&&window.addEventListener("scroll",()=>{r.classList.toggle("scrolled",window.scrollY>60)},{passive:!0})}function y(){const r=document.querySelector(".course-cta .btn-gold");r&&setTimeout(()=>r.classList.add("shimmer-active"),1200)}function E(){const r=document.querySelectorAll("section[id]"),e=document.querySelectorAll('.nav a[href^="#"]');if(!e.length)return;const t=new IntersectionObserver(a=>{a.forEach(o=>{o.isIntersecting&&e.forEach(s=>{s.style.color=s.getAttribute("href")===`#${o.target.id}`?"var(--color-text)":""})})},{threshold:.4});r.forEach(a=>t.observe(a))}document.addEventListener("DOMContentLoaded",()=>{m(),p(),h(),b(),g(),y(),E(),setTimeout(()=>{document.querySelectorAll(".reveal:not(.visible)").forEach(r=>{const e=r.getBoundingClientRect();e.top<window.innerHeight&&e.bottom>0&&r.classList.add("visible")})},100),console.log("🔥 Street Barbershop — 4 cartas carregadas")});
