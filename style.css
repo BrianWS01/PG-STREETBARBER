@@ -448,69 +448,58 @@ section {
 /* Responsividade para o Deck de Barbeiros */
 @media (max-width: 992px) {
   .barbers {
-    overflow-x: hidden;
+    padding-bottom: 5rem;
   }
 
   .barbers-deck {
-    width: 32rem;
-    /* Scaled down container for tablets */
-    height: 32rem;
-    margin: 0 auto 2rem;
-    transform: scale(0.8);
-    transform-origin: center center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5rem;
+    perspective: none;
+    margin: 3rem auto 0;
+    transform: none !important;
   }
 
-  /* Center the cards in the scaled container */
   .card-slot {
-    left: 6rem !important;
+    position: relative !important;
+    width: 90vw;
+    max-width: 28rem;
+    height: 38rem;
+    left: 0 !important;
+    transform: none !important;
+    margin-bottom: 0;
+    filter: none !important;
   }
 
-  .card-slot:nth-child(1) {
-    left: -2rem !important;
+  .card-slot.active {
+    transform: scale(1.02) !important;
+    translate: 0;
   }
 
-  .card-slot:nth-child(2) {
-    left: 3rem !important;
-  }
-
-  .card-slot:nth-child(3) {
-    left: 8rem !important;
-  }
-
+  .card-slot:nth-child(1),
+  .card-slot:nth-child(2),
+  .card-slot:nth-child(3),
   .card-slot:nth-child(4) {
-    left: 13rem !important;
+    transform: none !important;
+    left: 0 !important;
   }
 }
 
 @media (max-width: 480px) {
+  .barbers {
+    padding-top: 2rem;
+  }
+
   .barbers-deck {
-    width: 20rem;
-    /* Tighter container for phones */
-    height: 31rem;
-    transform: scale(0.5);
-    /* Balanced scale as planned */
-    margin: -7rem auto -2rem;
-    /* Adjusted to remove vertical voids */
+    gap: 4rem;
   }
 
   .card-slot {
-    left: 0 !important;
-  }
-
-  .card-slot:nth-child(1) {
-    left: -4rem !important;
-  }
-
-  .card-slot:nth-child(2) {
-    left: -1rem !important;
-  }
-
-  .card-slot:nth-child(3) {
-    left: 2rem !important;
-  }
-
-  .card-slot:nth-child(4) {
-    left: 5rem !important;
+    width: 88vw;
+    height: 36rem;
   }
 }
 
