@@ -1,6 +1,8 @@
 html {
   font-size: 75%;
   /* Simulates exactly 75% browser zoom */
+  overflow-x: hidden;
+  /* Secures the viewport to prevent horizontal "swaying" */
 }
 
 :root {
@@ -1897,6 +1899,16 @@ section {
 
 .reveal.reveal-scale {
   transform: scale(0.88);
+}
+
+/* --- Mobile specific reveal adjustments to prevent swaying --- */
+@media (max-width: 768px) {
+
+  .reveal.reveal-left,
+  .reveal.reveal-right {
+    transform: translateY(30px);
+    /* Rely on vertical movement rather than horizontal on mobile */
+  }
 }
 
 .reveal.visible {
