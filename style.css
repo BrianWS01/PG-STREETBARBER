@@ -373,36 +373,63 @@ section {
 
 
 /* =============================================
-   BARBERS — STANDARD GRID
+   BARBERS — PLAYING CARD DECK (FAN)
    ============================================= */
 
 .barbers-deck {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2.5rem;
-  margin: 2rem auto 4rem;
-  width: 100%;
+  position: relative;
+  width: 48rem;
+  height: 48rem;
+  margin: -2rem auto 2rem;
   perspective: 1800px;
-  /* Restore 3D depth */
+  transform-style: preserve-3d;
 }
 
+/* Each card slot: absolutely stacked, rotated from bottom center */
 .card-slot {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 20rem;
   height: 31rem;
   cursor: pointer;
+  transform-origin: bottom center;
   transform-style: preserve-3d;
-  /* Restore 3D logic for inner elements */
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.4s ease,
+    z-index 0s;
 }
 
-.card-slot:hover {
-  transform: translateY(-10px);
+/* Fan positions — 4 cards */
+.card-slot:nth-child(1) {
+  transform: rotate(-24deg);
+  z-index: 1;
+  left: 0;
 }
 
+.card-slot:nth-child(2) {
+  transform: rotate(-8deg);
+  z-index: 2;
+  left: 70px;
+}
+
+.card-slot:nth-child(3) {
+  transform: rotate(8deg);
+  z-index: 3;
+  left: 140px;
+}
+
+.card-slot:nth-child(4) {
+  transform: rotate(24deg);
+  z-index: 4;
+  left: 210px;
+}
+
+/* Active card rises up, straightens and scales */
 .card-slot.active {
-  z-index: 5;
+  transform: rotate(0deg) translateY(-90px) translateX(105px) scale(1.05) !important;
+  z-index: 10 !important;
+  filter: drop-shadow(0 30px 60px rgba(212, 175, 55, 0.5));
 }
 
 /* 1-spin keyframe (360deg) */
@@ -417,32 +444,71 @@ section {
 }
 
 /* Responsividade para o Deck de Barbeiros */
-/* Responsividade para o Grid de Barbeiros */
-/* Responsividade para o Grid de Barbeiros */
 @media (max-width: 992px) {
-  .barbers-deck {
-    gap: 3rem;
-    padding: 0 1rem;
+  .barbers {
+    overflow-x: hidden;
   }
 
+  .barbers-deck {
+    width: 32rem;
+    /* Scaled down container for tablets */
+    height: 32rem;
+    margin: 0 auto 2rem;
+    transform: scale(0.8);
+    transform-origin: center center;
+  }
+
+  /* Center the cards in the scaled container */
   .card-slot {
-    width: 22rem;
-    height: 34rem;
+    left: 6rem !important;
+  }
+
+  .card-slot:nth-child(1) {
+    left: -2rem !important;
+  }
+
+  .card-slot:nth-child(2) {
+    left: 3rem !important;
+  }
+
+  .card-slot:nth-child(3) {
+    left: 8rem !important;
+  }
+
+  .card-slot:nth-child(4) {
+    left: 13rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .barbers-deck {
-    flex-direction: column;
-    align-items: center;
-    gap: 3.5rem;
-    margin-top: 2rem;
+    width: 20rem;
+    /* Tighter container for phones */
+    height: 31rem;
+    transform: scale(0.5);
+    /* Balanced scale as planned */
+    margin: -7rem auto -2rem;
+    /* Adjusted to remove vertical voids */
   }
 
   .card-slot {
-    width: 90vw;
-    height: 33rem;
-    max-width: 320px;
+    left: 0 !important;
+  }
+
+  .card-slot:nth-child(1) {
+    left: -4rem !important;
+  }
+
+  .card-slot:nth-child(2) {
+    left: -1rem !important;
+  }
+
+  .card-slot:nth-child(3) {
+    left: 2rem !important;
+  }
+
+  .card-slot:nth-child(4) {
+    left: 5rem !important;
   }
 }
 
