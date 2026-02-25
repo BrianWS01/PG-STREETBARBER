@@ -1,5 +1,3 @@
-import './style.css'
-
 /* =============================================
    BARBERS DATA — 4 barbeiros
    ============================================= */
@@ -299,30 +297,7 @@ function initActiveNav() {
 /* =============================================
    RESPONSIVE: mobile collapses deck into column
    ============================================= */
-function handleMobileDeck() {
-  const deck = document.getElementById('barbersDeck');
-  if (!deck) return;
-  const mq = window.matchMedia('(max-width: 720px)');
 
-  function apply(e) {
-    if (e.matches) {
-      deck.style.cssText = 'height:auto; flex-direction:column; align-items:center; gap:1.5rem;';
-      deck.querySelectorAll('.card-slot').forEach(s => {
-        s.style.transform = 'none';
-        s.style.width = '300px';
-        s.style.height = '460px';
-      });
-    } else {
-      deck.style.cssText = '';
-      deck.querySelectorAll('.card-slot').forEach(s => {
-        s.style.cssText = '';
-      });
-    }
-  }
-
-  mq.addEventListener('change', apply);
-  apply(mq);
-}
 
 /* =============================================
    INIT
@@ -335,7 +310,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initShimmerCTA();
   initActiveNav();
-  handleMobileDeck();
 
   // Force immediate reveal for elements already in viewport on load
   setTimeout(() => {
