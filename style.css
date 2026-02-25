@@ -448,59 +448,42 @@ section {
 @media (max-width: 992px) {
   .barbers {
     overflow-x: hidden;
-    /* Prevents horizontal shifts from internal elements */
   }
 
   .barbers-deck {
-    width: 38rem;
-    /* Scaled down version of desktop width */
-    height: 32rem;
-    display: block;
-    /* Restore original display */
-    perspective: 1800px;
-    margin: -1rem auto 2rem;
-    transform: scale(0.8);
-    /* Scale to fit slightly smaller screens */
-    transform-origin: center center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    perspective: none;
+    margin: 0 auto 3rem;
+    transform: none !important;
   }
 
   .card-slot {
-    position: absolute !important;
-    /* Restore stacking */
-    width: 20rem;
-    height: 31rem;
-    bottom: 0;
-    left: 8rem !important;
-    /* Center of the 38rem scaled container approx */
-    transform-origin: bottom center !important;
+    position: relative !important;
+    width: 90vw;
+    max-width: 25rem;
+    height: 36rem;
+    left: 0 !important;
+    transform: none !important;
     margin-bottom: 0;
     filter: none !important;
   }
 
   .card-slot.active {
-    transform: rotate(0deg) translateY(-80px) translateX(0) scale(1.05) !important;
-    z-index: 10 !important;
+    transform: scale(1.02) !important;
+    translate: 0;
   }
 
-  /* Restore fan positions for mobile */
-  .card-slot:nth-child(1) {
-    transform: rotate(-24deg);
-    left: 0rem !important;
-  }
-
-  .card-slot:nth-child(2) {
-    transform: rotate(-8deg);
-    left: 5rem !important;
-  }
-
-  .card-slot:nth-child(3) {
-    transform: rotate(8deg);
-    left: 10rem !important;
-  }
-
+  .card-slot:nth-child(1),
+  .card-slot:nth-child(2),
+  .card-slot:nth-child(3),
   .card-slot:nth-child(4) {
-    transform: rotate(24deg);
-    left: 15rem !important;
+    transform: none !important;
+    left: 0 !important;
   }
 }
 
