@@ -1292,7 +1292,7 @@ section {
 /* CLIENT GALLERY — PREMIUM BENTO GRID */
 .clients {
   background: #050505;
-  padding: 8rem 0;
+  padding: 5rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -1314,7 +1314,7 @@ section {
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 200px;
   gap: 1.25rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
   perspective: 2000px;
 }
 
@@ -1472,7 +1472,7 @@ section {
 /* PREMIUM LOCATION OVERHAUL */
 .location {
   background: #020202;
-  padding: 8rem 0;
+  padding: 5rem 0;
   position: relative;
 }
 
@@ -1480,7 +1480,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 2.5rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
   align-items: stretch;
 }
 
@@ -1592,7 +1592,7 @@ section {
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 250px;
   gap: 1.25rem;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 /* Atmosphere Bento Spans */
