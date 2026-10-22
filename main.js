@@ -1,38 +1,60 @@
 /* =============================================
-   BARBERS DATA — 4 barbeiros
+   BARBERS DATA — 6 barbeiros da Street Barbershop
    ============================================= */
 const barbers = [
   {
-    name: "Ricardo 'The Blade'",
-    role: "Especialista em Fade e Navalha",
-    exp: "12 anos",
-    desc: "Mestre do degradê e navalha. Formou mais de 200 alunos e é referência nacional em técnicas de fade de precisão.",
-    img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=600&auto=format&fit=crop",
+    name: "Solano",
+    role: "Fade & Navalhado",
+    exp: "Especialista STB",
+    desc: "Técnica de alta precisão em degradê militar, fade navalhado limpo e acabamento milimétrico com padrão Street Barbershop.",
+    img: "./BARBEIRO SOLANO.jpg",
+    pos: "center 32%",
     pip: "♠"
   },
   {
-    name: "Alex Urban",
-    role: "Visagismo Masculino",
-    exp: "8 anos",
-    desc: "Pioneiro em técnicas afro e barboterapia. Especialista em visagismo e cortes personalizados para cada rosto.",
-    img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=600&auto=format&fit=crop",
+    name: "Ryan",
+    role: "Cortes Urbanos & Visagismo",
+    exp: "Especialista STB",
+    desc: "Especialista em visagismo moderno, freestyle, texturização e as principais tendências de cortes urbanos da cena.",
+    img: "./BARBEIRO RYAN.jpg",
+    pos: "center 32%",
     pip: "♥"
   },
   {
-    name: "Bruno Gold",
-    role: "Barba e Estilo Clássico",
-    exp: "10 anos",
-    desc: "Referência em cortes clássicos e modernos de alto padrão. Design de barba e hidratação profissional.",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop",
+    name: "Mirtão",
+    role: "Barboterapia & Fade Clássico",
+    exp: "Master Barber STB",
+    desc: "Referência em barboterapia completa, alinhamento de barba com toalha quente e cortes clássicos e modernos de alto padrão.",
+    img: "./BARBEIRO MIRTAO.jpg",
+    pos: "center 48%",
     pip: "♦"
   },
   {
-    name: "Diego Ferreira",
-    role: "Estilista Sênior & Colorist",
-    exp: "6 anos",
-    desc: "Especialista em coloração masculina e cortes modernos de alto padrão. Referência em tendências internacionais.",
-    img: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=600&auto=format&fit=crop",
+    name: "Matheus",
+    role: "Visagismo & Pigmentação",
+    exp: "Especialista STB",
+    desc: "Domínio em pigmentação capilar, harmonização de barba e técnicas sob medida para valorizar o perfil de cada cliente.",
+    img: "./BARBEIRO MATHEUS.jpg",
+    pos: "center 32%",
     pip: "♣"
+  },
+  {
+    name: "Fossa",
+    role: "Texturização & Freestyle",
+    exp: "Especialista STB",
+    desc: "Cortes de impacto com linhas geométricas afiadas, freestyle autoral e domínio refinado em tesoura e navalha.",
+    img: "./BARBEIRO FOSSA.jpg",
+    pos: "center 34%",
+    pip: "♠"
+  },
+  {
+    name: "Carlão",
+    role: "Design de Barba & Cortes Clássicos",
+    exp: "Master Barber STB",
+    desc: "Especialista em barbas esculpidas, navalha tradicional e atendimento de excelência com padrão executivo.",
+    img: "./BARBEIRO CARLÃO.jpg",
+    pos: "center 38%",
+    pip: "♦"
   }
 ];
 
@@ -51,7 +73,7 @@ function renderBarbers() {
 
         <!-- CARD FRONT (visible by default — face up) -->
         <div class="card-front">
-          <img class="card-front-img" src="${b.img}" alt="${b.name}" loading="lazy">
+          <img class="card-front-img" src="${b.img}" alt="${b.name}" style="object-position: ${b.pos};" loading="lazy">
           <div class="card-front-info">
             <h3>${b.name}</h3>
             <span class="card-role">${b.role} · ${b.exp}</span>
@@ -321,5 +343,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, 100);
 
-  console.log('🔥 Street Barbershop — 4 cartas carregadas');
+  console.log('🔥 Street Barbershop — 6 cartas carregadas');
 });
