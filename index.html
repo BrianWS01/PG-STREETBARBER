@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/PG-STREETBARBER/assets/favicon-D0SFpKUE.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Street Barbershop | Curso de gestão para barbearia</title>
+  <meta name="description"
+    content="Curso online do Henrique PG Santos para donos de barbearia: planos de assinatura, cliente novo todo mês e controle do financeiro. 5 módulos e 25 aulas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <!-- Tracker: street-barbers-v2-redesign -->
+  <script type="module" crossorigin src="/PG-STREETBARBER/assets/index-CqINMhrp.js"></script>
+  <link rel="stylesheet" crossorigin href="/PG-STREETBARBER/assets/index-D4dG3EpI.css">
+</head>
+
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="container header-inner">
+        <div class="logo">STREET <span>BARBERSHOP</span></div>
+        <nav class="nav">
+          <a href="#courses">Curso</a>
+          <a href="#about">Sobre</a>
+          <a href="#clients" hidden>Cortes</a>
+          <a href="#location" hidden>Localização</a>
+          <a href="#leads" class="btn btn-gold btn-sm">QUERO ME INSCREVER</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-particles" id="heroParticles"></div>
+      <div class="container hero-wrapper">
+        <div class="hero-content">
+          <span class="badge hero-badge-anim">🏆 +500 Alunos Formados</span>
+          <h1 class="headline hero-headline-anim">Sua barbearia cheia <span class="text-red">o mês inteiro,
+            </span>não só no sábado</h1>
+          <p class="subheadline hero-sub-anim">Aprenda a vender plano de assinatura, trazer cliente novo e saber quanto sua barbearia lucra de verdade.
+          </p>
+          <ul class="hero-facts hero-sub-anim">
+            <li><strong>5</strong> módulos</li>
+            <li><strong>25</strong> aulas em vídeo</li>
+            <li>No seu ritmo</li>
+          </ul>
+          <div class="hero-ctas hero-ctas-anim">
+            <a href="#courses" class="btn btn-gold btn-pulse">QUERO APRENDER AGORA</a>
+            <a href="#conteudo" class="btn btn-outline">Ver Conteúdo do Curso</a>
+          </div>
+        </div>
+
+        <!-- HENRIQUE SANTOS FOUNDER HERO IMAGE -->
+        <div class="hero-founder">
+          <div class="hero-founder-glow"></div>
+          <img src="/PG-STREETBARBER/assets/henrique-santos-CUwLUra9.webp" alt="Henrique PG Santos - Fundador Street Barbershop" class="hero-founder-img">
+          <div class="hero-founder-badge">
+            <span class="hero-founder-badge-role">👑 FUNDADOR & MASTER BARBER</span>
+            <span class="hero-founder-badge-name">Henrique "PG" Santos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FOUNDER QUOTE -->
+    <section class="founder-quote reveal">
+      <div class="container">
+        <div class="founder-quote-inner">
+          <span class="founder-quote-mark">"</span>
+          <blockquote>
+            Já fui repositor de supermercado.<br>
+            <strong>Hoje construo negócios e barbeiros.</strong>
+          </blockquote>
+          <span class="founder-quote-author">Henrique "PG" Santos · Fundador, Street Barbershop</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BARBERS SECTION -->
+    <section id="barbers" class="barbers" hidden>
+      <div class="container">
+        <h2 class="section-title text-center reveal">Nossos <span class="text-red">Barbeiros</span></h2>
+        <p class="section-subtitle reveal" style="margin-bottom:0;">Clique em uma carta para conhecer nosso time
+        </p>
+        <div class="barbers-deck reveal" id="barbersDeck">
+          <!-- Cards injected by main.js -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- COURSES SECTION -->
+    <section id="courses" class="courses">
+
+      <!-- HERO DO CURSO -->
+      <div class="course-hero">
+        <div class="container course-hero-layout">
+
+          <!-- LEFT: thumbnail / imagem -->
+          <div class="course-thumb reveal reveal-left">
+            <div class="course-thumb-wrap" id="coursePreview">
+              <video class="course-thumb-video" src="/PG-STREETBARBER/assets/previa-curso-BKleSWKT.mp4" poster="/PG-STREETBARBER/assets/previa-curso-BJRFyev6.jpg"
+                preload="none" playsinline aria-label="Prévia do curso com Henrique PG Santos"></video>
+              <button type="button" class="course-thumb-overlay" aria-label="Assistir à prévia do curso">
+                <span class="course-thumb-play" aria-hidden="true">▶</span>
+                <span class="course-thumb-label">Assista à prévia · 2 min</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT: info -->
+          <div class="course-info reveal reveal-right">
+            <div class="section-label">CURSO ONLINE</div>
+            <h2 class="section-title">O curso que vai <span class="text-red">organizar</span> sua barbearia</h2>
+            <p class="course-tagline">Pra quem cansou de ver a agenda lotada num dia e vazia no outro. Aqui você aprende a montar uma receita que entra todo mês.</p>
+
+            <!-- O que está incluso (baseado nos 5 módulos) -->
+            <ul class="course-includes">
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" /></svg></span> Plano de assinatura com preço que fecha a conta</li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg></span> Recepção treinada pra vender o plano no balcão</li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8" /><path d="M21 3v5h-5" /></svg></span> Cobrança, renovação e inadimplência sob controle</li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></svg></span> Reels, Google e parcerias locais pra trazer cliente novo</li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18" /><path d="m7 15 4-4 3 3 5-6" /></svg></span> Lucro, ticket médio e ocupação de cada cadeira</li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg></span> Plano de ação pros próximos 30 dias</li>
+            </ul>
+
+            <!-- CTA -->
+            <div class="course-cta-block">
+              <p class="cta-urgency">Acesso liberado assim que o pagamento é aprovado.</p>
+              <a href="https://kiwify.com.br" target="_blank" rel="noopener" class="btn btn-gold btn-lg">
+                QUERO ACESSAR O CURSO
+              </a>
+              <p class="cta-sub">✅ Pagamento 100% seguro · Plataforma Kiwify</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MÓDULOS / O QUE VAI APRENDER -->
+      <div class="course-modules-section" id="conteudo">
+        <div class="container">
+          <div class="section-label text-center reveal">CONTEÚDO DO CURSO</div>
+          <h3 class="subsection-title text-center reveal">O que você vai <span class="text-red">dominar</span></h3>
+
+          <div class="modules-grid reveal">
+            <div class="module-card">
+              <div class="module-num">01</div>
+              <h4>✅ Assinaturas na barbearia</h4>
+              <p>Como criar planos que dão lucro, definir preços, escolher entre plano limitado e ilimitado e montar as regras de uso.</p>
+            </div>
+            <div class="module-card">
+              <div class="module-num">02</div>
+              <h4>✅ Venda e gestão dos assinantes</h4>
+              <p>Como apresentar o plano, treinar a recepção para vender e controlar cobranças, renovações e inadimplência.</p>
+            </div>
+            <div class="module-card">
+              <div class="module-num">03</div>
+              <h4>✅ Clientes novos todo mês</h4>
+              <p>Reels, campanhas, avaliações no Google, parcerias locais e como transformar seguidor em cliente pagante.</p>
+            </div>
+            <div class="module-card">
+              <div class="module-num">04</div>
+              <h4>✅ Financeiro e indicadores</h4>
+              <p>Faturamento, lucro, ticket médio, ocupação das cadeiras e desempenho de cada barbeiro.</p>
+            </div>
+            <div class="module-card module-card--gold">
+              <div class="module-num">05</div>
+              <h4>✅ Operação e crescimento</h4>
+              <p>Processos, padrões, gestão da equipe e um plano de ação para os próximos 30 dias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARA QUEM É + DIFERENCIAIS -->
+      <div class="container course-bottom">
+
+        <!-- Para quem é -->
+        <div class="course-who reveal reveal-left">
+          <h3 class="subsection-title">Para quem é?</h3>
+          <div class="who-list">
+            <div class="who-item">
+              <span class="who-icon">✦</span>
+              <p><strong>Donos de barbearia e barbeiros</strong> que querem abrir ou organizar o próprio negócio e parar de depender só do movimento do dia.</p>
+            </div>
+          </div>
+          <h3 class="subsection-title" style="margin-top:2rem;">Formato</h3>
+          <div class="who-list">
+            <div class="who-item">
+              <span class="who-icon">✦</span>
+              <p><strong>5 módulos e 25 aulas em vídeo</strong>, com acesso pela área de membros, no seu ritmo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diferenciais -->
+        <div class="course-diff reveal reveal-right">
+          <h3 class="subsection-title">Por que Street Barbershop?</h3>
+          <div class="diff-list">
+            <div class="diff-item"><span class="check">✔</span> Método criado por Master Barbers com +10 anos</div>
+            <div class="diff-item"><span class="check">✔</span> +500 alunos formados no Brasil e exterior</div>
+            <div class="diff-item"><span class="check">✔</span> Suporte em grupo exclusivo de alunos</div>
+            <div class="diff-item"><span class="check">✔</span> Acesso vitalício + atualizações grátis</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA FINAL ÉPICO -->
+      <div class="course-final-cta" hidden>
+        <div class="container">
+          <div class="course-final-cta-inner reveal reveal-scale">
+            <div class="cfc-text">
+              <p class="cfa-tag">OFERTA LIMITADA</p>
+              <h2>Pronto pra ter cliente fixo<br>pagando <span class="text-red">todo mês</span>?</h2>
+              <p class="cfa-sub">Mais de 500 barbeiros já passaram pela Street Barbershop.</p>
+            </div>
+            <div class="cfc-action">
+              <a href="https://kiwify.com.br" target="_blank" rel="noopener" class="btn btn-gold btn-lg cfa-btn">
+                QUERO ENTRAR AGORA →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+      <div class="container about-layout">
+
+        <!-- LEFT: image -->
+        <div class="about-img reveal reveal-left">
+          <img src="/PG-STREETBARBER/assets/Recp%C3%A7%C3%A3o%20de%20frente-BjHbktip.jpg"
+            alt="Espaço Street Barbershop">
+          <div class="about-img-badge">
+            <span>há mais de</span>
+            <strong>10 anos</strong>
+          </div>
+        </div>
+
+        <!-- RIGHT: text -->
+        <div class="about-text reveal reveal-right">
+          <div class="section-label">NOSSA HISTÓRIA</div>
+          <h2 class="section-title">Sobre a <span class="text-red">STREET BARBERSHOP</span></h2>
+
+          <p class="about-lead">
+            A Street Barbershop começou pequena, em Jardim América. Hoje já são <strong>mais de 500 barbeiros</strong>
+            formados por aqui.
+          </p>
+          <p class="about-body">
+            O Henrique sabe o que é começar do zero. Por isso a gente ensina o corte e também a parte
+            que ninguém mostra: preço, cliente fixo e conta fechando no fim do mês. Do primeiro cliente
+            até a barbearia própria.
+          </p>
+
+          <!-- Mini-stats -->
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="about-stat-num">10+</span>
+              <span class="about-stat-label">Anos no mercado</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">500+</span>
+              <span class="about-stat-label">Barbeiros formados</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">30+</span>
+              <span class="about-stat-label">Cidades alcançadas</span>
+            </div>
+          </div>
+
+          <a href="https://kiwify.com.br" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:2rem;">Quero acessar o curso →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CLIENT GALLERY -->
+    <section id="clients" class="clients" hidden>
+      <div class="container">
+        <div class="section-label reveal">TRANSFORMAÇÕES REAIS</div>
+        <h2 class="section-title text-center reveal">Nossos <span class="text-red">Cortes</span></h2>
+        <p class="section-subtitle reveal">Trabalhos reais executados pelo time da Street Barbershop. Precisão milimétrica, atitude e excelência técnica.</p>
+
+        <div class="client-gallery reveal-stagger">
+          <div class="client-item">
+            <img src="/PG-STREETBARBER/assets/Corte%201%20%20(1)-DOUCkP3W.jpg" alt="Corte Low Fade - Street Barbershop" style="object-position: center 40%;">
+            <div class="client-overlay">
+              <span class="client-tag">LOW FADE</span>
+            </div>
+          </div>
+          <div class="client-item">
+            <img src="/PG-STREETBARBER/assets/Corte%201%20%20(2)-TiEhQ1SX.jpg" alt="Corte Mullet Fade - Street Barbershop" style="object-position: center 40%;">
+            <div class="client-overlay">
+              <span class="client-tag">MULLET FADE</span>
+            </div>
+          </div>
+          <div class="client-item">
+            <img src="/PG-STREETBARBER/assets/Corte%201%20%20(3)-CuLSbVE-.jpg" alt="Corte Taper Fade Americano - Street Barbershop" style="object-position: center 40%;">
+            <div class="client-overlay">
+              <span class="client-tag">TAPER AMERICANO</span>
+            </div>
+          </div>
+          <div class="client-item">
+            <img src="/PG-STREETBARBER/assets/Corte%201%20%20(4)-CyN2e85q.jpg" alt="Corte Scumbag Boogie - Street Barbershop" style="object-position: center 35%;">
+            <div class="client-overlay">
+              <span class="client-tag">SCUMBAG BOOGIE</span>
+            </div>
+          </div>
+          <div class="client-item">
+            <img src="/PG-STREETBARBER/assets/Corte%201%20%20(5)-DvVP2X7y.jpg" alt="Corte Trança Nagô e Freestyle - Street Barbershop" style="object-position: center 40%;">
+            <div class="client-overlay">
+              <span class="client-tag">FREESTYLE & TRANÇAS</span>
+            </div>
+          </div>
+          <div class="client-item">
+            <img src="/PG-STREETBARBER/assets/Corte%201%20%20(6)-D_RNaS_V.jpg" alt="Corte Tribal Waves Freestyle - Street Barbershop" style="object-position: center 40%;">
+            <div class="client-overlay">
+              <span class="client-tag">TRIBAL FREESTYLE</span>
+            </div>
+          </div>
+          <div class="client-item">
+            <img src="/PG-STREETBARBER/assets/Corte%201%20%20(7)-BZ3ZLSTu.jpg" alt="Corte Geométrico na Nuca - Street Barbershop" style="object-position: center 45%;">
+            <div class="client-overlay">
+              <span class="client-tag">DESIGN NA NUCA</span>
+            </div>
+          </div>
+          <div class="client-item">
+            <img src="/PG-STREETBARBER/assets/Corte%201%20%20(8)-CUaG2kPf.jpg" alt="Corte Curly Mullet Fade - Street Barbershop" style="object-position: center 40%;">
+            <div class="client-overlay">
+              <span class="client-tag">CURLY FADE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO PREMIUM -->
+    <section id="location" class="location" hidden>
+      <div class="container">
+        <div class="section-label reveal">VENHA CONHECER</div>
+        <h2 class="section-title text-center reveal">Onde a <span class="text-red">Mágica acontece</span></h2>
+
+        <div class="location-bento-grid">
+          <!-- INFO CARDS -->
+          <div class="location-info-cards reveal-left text-center">
+            <div class="info-card glass-card">
+              <span class="info-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg></span>
+              <h3>Endereço</h3>
+              <p>Rua Nicaragua, 258<br>Jardim América</p>
+            </div>
+            <div class="info-card glass-card">
+              <span class="info-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+                  <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
+                  <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
+                  <path d="M10 6h4" />
+                  <path d="M10 10h4" />
+                  <path d="M10 14h4" />
+                  <path d="M10 18h4" />
+                </svg></span>
+              <h3>Cidade</h3>
+              <p>Campo Limpo Paulista<br>CEP: 13231-110</p>
+            </div>
+            <div class="info-card glass-card">
+              <span class="info-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg></span>
+              <h3>Horários</h3>
+              <p>Seg a Sex: 9h às 19h<br>Sáb: 9h às 17h</p>
+            </div>
+            <div class="info-card glass-card">
+              <span class="info-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg></span>
+              <h3>Contato</h3>
+              <p>+55 11 95550-6042</p>
+              <div class="info-card-actions">
+                <a href="https://wa.me/5511955506042" target="_blank" rel="noopener" class="btn btn-gold btn-tiny">Falar
+                  no Whats</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- MAP SIDE -->
+          <div class="location-map-wrap reveal-right">
+            <iframe
+              src="https://www.google.com/maps?q=Rua+Nicaragua,+258,+Jardim+América,+Campo+Limpo+Paulista&output=embed"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Localização Street Barbershop">
+            </iframe>
+            <div class="map-overlay-badge">MAPA INTERATIVO</div>
+          </div>
+        </div>
+
+        <!-- ATMOSPHERE PHOTOS — INTERACTIVE BENTO GRID -->
+        <div class="atmosphere-section">
+          <h3 class="subsection-title text-center reveal">Nosso Ambiente</h3>
+          <p class="section-subtitle text-center reveal">Um espaço projetado para o seu conforto, estilo e bem-estar.
+          </p>
+
+          <div class="atmosphere-grid bento-atmos reveal-stagger">
+            <!-- RECEPTION & LOUNGE (BIG HERO CARD) -->
+            <div class="atmosphere-item atmos-main">
+              <img src="/PG-STREETBARBER/assets/Recp%C3%A7%C3%A3o%20de%20frente-BjHbktip.jpg" alt="Recepção e Lounge Street Barbershop" style="object-position: center center;">
+              <div class="atmos-overlay">
+                <div class="atmos-content">
+                  <span class="atmos-tag">PROJETO EXCLUSIVO</span>
+                  <h4>Recepção & Lounge STB</h4>
+                  <p>Estilo, disciplina e resultados. Arquitetura moderna pensada para sua experiência premium.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FACHADA (SIDE TOP) -->
+            <div class="atmosphere-item atmos-side-top">
+              <img src="/PG-STREETBARBER/assets/FACHADA%201-Dgbkajof.jpg" alt="Fachada Street Barbershop" style="object-position: center 20%;">
+              <div class="atmos-overlay">
+                <div class="atmos-content">
+                  <span class="atmos-tag">FACHADA OFICIAL</span>
+                  <h4>Entrada & Fácil Acesso</h4>
+                  <p>Identidade visual marcante no coração de Jardim América.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- DENTRO DA BARBEARIA (SIDE BOTTOM) -->
+            <div class="atmosphere-item atmos-side-bottom">
+              <img src="/PG-STREETBARBER/assets/DENTRO%20DA%20BARBEARIA-Dh44Gzmx.jpg" alt="Área de Atendimento Street Barbershop" style="object-position: center 30%;">
+              <div class="atmos-overlay">
+                <div class="atmos-content">
+                  <span class="atmos-tag">ESTRUTURA COMPLETA</span>
+                  <h4>Bancadas & Conforto</h4>
+                  <p>Espaço climatizado, iluminação em LED e poltronas de espera.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEAD CAPTURE -->
+    <section id="leads" class="leads">
+      <div class="container">
+        <div class="form-card reveal reveal-scale">
+          <div class="section-label" style="justify-content:center; margin-bottom:1rem;">ACESSO IMEDIATO</div>
+          <h2 class="section-title">Pare de depender só do <span class="text-gold">movimento do dia</span></h2>
+          <p>São 25 aulas direto ao ponto. Você assiste no seu ritmo e já começa a aplicar na sua barbearia.</p>
+          <a href="https://kiwify.com.br" target="_blank" rel="noopener" class="btn btn-gold btn-lg" style="margin-top:1.5rem;">
+            QUERO ACESSAR O CURSO →
+          </a>
+          <p class="cta-sub" style="margin-top:1rem; color:var(--color-text-muted);">✅ Pagamento 100% seguro · Plataforma Kiwify</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="logo" style="margin-bottom: 1rem;">STREET <span>BARBERSHOP</span></div>
+        <p style="color: var(--color-text-muted); margin-bottom:.5rem;">© 2026 Street Barbershop. Todos os direitos
+          reservados.</p>
+        <p style="color: #555; font-size:.8rem;">Este site não é afiliado ao Facebook ou Instagram. Todos os resultados
+          apresentados são individuais e não garantem os mesmos resultados para todos.</p>
+      </div>
+    </footer>
+
+    <!-- BARRA FIXA DE COMPRA (só no celular) -->
+    <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+      <div class="sticky-cta-info">
+        <strong>Street Barbershop</strong>
+        <span>5 módulos · 25 aulas</span>
+      </div>
+      <a href="https://kiwify.com.br" target="_blank" rel="noopener" class="btn btn-gold sticky-cta-btn" tabindex="-1">QUERO ACESSAR →</a>
+    </div>
+  </div>
+</body>
+
+</html>
