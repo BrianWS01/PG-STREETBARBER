@@ -133,8 +133,8 @@ section {
   min-height: 95vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(rgba(10, 10, 10, 0.88), rgba(10, 10, 10, 0.92)),
-    url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1471&auto=format&fit=crop');
+  background: linear-gradient(rgba(10, 10, 10, 0.68), rgba(10, 10, 10, 0.85)),
+    url('./Recpção de frente.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -2126,3 +2126,212 @@ section {
 .rating-number.counting {
   color: var(--color-primary);
 }
+/* Seções ocultas temporariamente (atributo hidden no HTML) */
+[hidden] { display: none !important; }
+
+/* ===== BARRA FIXA DE COMPRA (celular) ===== */
+.sticky-cta { display: none; }
+
+@media (max-width: 768px) {
+  .sticky-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(10, 10, 10, 0.96);
+    border-top: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    transform: translateY(110%);
+    transition: transform 0.3s ease;
+  }
+  .sticky-cta.is-visible { transform: translateY(0); }
+  .sticky-cta-info { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+  .sticky-cta-info strong { font-family: var(--font-heading); font-size: 0.85rem; color: var(--color-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sticky-cta-info span { font-size: 0.75rem; color: var(--color-accent); }
+  .sticky-cta-btn { flex-shrink: 0; padding: 12px 16px; font-size: 0.85rem; min-height: 44px; }
+  /* espaço para a barra não cobrir o rodapé */
+  .footer { padding-bottom: calc(90px + env(safe-area-inset-bottom)); }
+}
+
+/* ===== HERO NO CELULAR: mais curta, Henrique e etiqueta inteiros na tela ===== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 4.5rem 0 0;
+  }
+  .hero-wrapper { gap: 0; }
+  .hero-content { padding-bottom: 0.5rem; }
+  .hero .badge { margin-bottom: 0.9rem; font-size: 0.75rem; }
+  .headline {
+    font-size: 2rem;
+    margin-bottom: 0.9rem;
+  }
+  .subheadline {
+    font-size: 1rem;
+    line-height: 1.45;
+    margin-bottom: 1.25rem;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.95rem 1rem;
+  }
+  .hero-founder {
+    width: 230px;
+    margin-top: 0.5rem;
+  }
+  .hero-founder-glow { width: 280px; height: 280px; }
+  /* centraliza sem usar transform (a animação de entrada sobrescrevia o translateX e jogava a etiqueta pra fora da tela) */
+  .hero-founder-badge {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: max-content;
+    max-width: calc(100vw - 32px);
+    transform: none;
+    bottom: 0.75rem;
+    padding: 0.55rem 1rem;
+    text-align: center;
+  }
+  .hero::after { height: 70px; }
+}
+
+/* ===== HERO: linha de fatos do curso ===== */
+.hero-facts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: -1.25rem 0 2rem;
+  padding: 0;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+.hero-facts li { display: flex; align-items: center; gap: 0.35rem; }
+.hero-facts li + li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  margin-right: 0.9rem;
+  margin-left: -0.6rem;
+}
+.hero-facts strong { color: var(--color-accent); font-size: 1.1rem; }
+
+@media (max-width: 1024px) {
+  .hero-facts { justify-content: center; }
+}
+@media (max-width: 768px) {
+  .hero-facts { margin: -0.5rem 0 1.25rem; font-size: 0.85rem; gap: 0.4rem 1rem; }
+  .hero-facts strong { font-size: 1rem; }
+}
+
+/* ===== LEITURA NO CELULAR =====
+   A base do site é html { font-size: 75% } (12px), o que deixava o texto
+   corrido entre 8 e 12px no celular. Aqui sobem só os textos, sem mexer no layout. */
+@media (max-width: 768px) {
+  /* texto corrido: mínimo 15px */
+  .subheadline,
+  .course-tagline { font-size: 16px; line-height: 1.5; }
+  .about-lead { font-size: 17px; line-height: 1.45; }
+  .about-body,
+  .course-includes li,
+  .module-card p,
+  .who-item p,
+  .diff-item,
+  .form-card p { font-size: 15px; line-height: 1.55; }
+  .cta-urgency { font-size: 15px; }
+
+  /* botões */
+  .btn { font-size: 14px; }
+  .sticky-cta-btn { font-size: 13px; }
+
+  /* rótulos e detalhes: mínimo 11–13px */
+  .section-label { font-size: 11px; }
+  .hero .badge { font-size: 12px; }
+  .hero-facts { font-size: 14px; }
+  .hero-facts strong { font-size: 16px; }
+  .cta-sub,
+  .form-card p.cta-sub { font-size: 12px; }
+  .founder-quote-author { font-size: 12px; }
+  .hero-founder-badge-role { font-size: 10.5px; }
+  .hero-founder-badge-name { font-size: 14px; }
+  .about-stat-label { font-size: 11px; }
+  .about-img-badge span { font-size: 11px; }
+  .course-thumb-label { font-size: 11px; }
+  .sticky-cta-info strong { font-size: 13px; }
+  .sticky-cta-info span { font-size: 12px; }
+  .footer p { font-size: 13px; }
+}
+
+/* ===== MÓDULOS EM SANFONA (celular) ===== */
+@media (max-width: 768px) {
+  .modules-grid { gap: 0.6rem; margin-top: 1.5rem; }
+  .module-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 0.85rem;
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .module-card:hover { transform: none; }
+  .module-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  .module-num { font-size: 1.6rem; margin: 0; opacity: 0.6; }
+  .module-card h4 { margin: 0; font-size: 13px; line-height: 1.3; }
+  .module-card::after {
+    grid-column: 3;
+    grid-row: 1;
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid var(--color-accent);
+    border-bottom: 2px solid var(--color-accent);
+    transform: rotate(45deg) translateY(-3px);
+    transition: transform 0.25s ease;
+  }
+  .module-card.is-open::after { transform: rotate(-135deg) translateY(-3px); }
+  .module-card p {
+    grid-column: 1 / -1;
+    display: none;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #242424;
+  }
+  .module-card.is-open { border-color: var(--color-primary); }
+  .module-card--gold.is-open { border-color: var(--color-accent); }
+  .module-card.is-open p { display: block; animation: fadeInUp 0.3s ease both; }
+}
+
+/* ===== PRÉVIA DO CURSO EM VÍDEO ===== */
+.course-thumb-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+}
+button.course-thumb-overlay {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+button.course-thumb-overlay:focus-visible { outline: 3px solid var(--color-accent); outline-offset: -3px; }
+.course-thumb-wrap.is-playing .course-thumb-overlay { display: none; }
+.course-thumb-play { padding-left: 4px; color: #fff; }

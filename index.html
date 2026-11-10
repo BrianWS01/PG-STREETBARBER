@@ -3,17 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Street Barbershop | Transforme sua Carreira</title>
+  <title>Street Barbershop | Curso de gestão para barbearia</title>
   <meta name="description"
-    content="Domine as técnicas mais avançadas do mercado de barbearia e fature alto. Cursos profissionais com certificado. Vagas limitadas!">
+    content="Curso online do Henrique PG Santos para donos de barbearia: planos de assinatura, cliente novo todo mês e controle do financeiro. 5 módulos e 25 aulas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@400;700;900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./style.css?v=6" />
+  <link rel="stylesheet" href="./style.css?v=7" />
   <!-- Tracker: street-barbers-v2-redesign -->
 </head>
 
@@ -23,10 +23,10 @@
       <div class="container header-inner">
         <div class="logo">STREET <span>BARBERSHOP</span></div>
         <nav class="nav">
+          <a href="#courses">Curso</a>
           <a href="#about">Sobre</a>
-          <a href="#courses">Cursos</a>
-          <a href="#clients">Cortes</a>
-          <a href="#location">Localização</a>
+          <a href="#clients" hidden>Cortes</a>
+          <a href="#location" hidden>Localização</a>
           <a href="#leads" class="btn btn-gold btn-sm">QUERO ME INSCREVER</a>
         </nav>
       </div>
@@ -38,14 +38,18 @@
       <div class="container hero-wrapper">
         <div class="hero-content">
           <span class="badge hero-badge-anim">🏆 +500 Alunos Formados</span>
-          <h1 class="headline hero-headline-anim">Transforme sua habilidade em uma <span class="text-red">máquina de
-              lucro</span></h1>
-          <p class="subheadline hero-sub-anim">Domine as técnicas mais avançadas do mercado e fature alto com a
-            barbearia
-            profissional.</p>
+          <h1 class="headline hero-headline-anim">Sua barbearia cheia <span class="text-red">o mês inteiro,
+            </span>não só no sábado</h1>
+          <p class="subheadline hero-sub-anim">Aprenda a vender plano de assinatura, trazer cliente novo e saber quanto sua barbearia lucra de verdade.
+          </p>
+          <ul class="hero-facts hero-sub-anim">
+            <li><strong>5</strong> módulos</li>
+            <li><strong>25</strong> aulas em vídeo</li>
+            <li>No seu ritmo</li>
+          </ul>
           <div class="hero-ctas hero-ctas-anim">
             <a href="#courses" class="btn btn-gold btn-pulse">QUERO APRENDER AGORA</a>
-            <a href="#testimonials" class="btn btn-outline">Ver Depoimentos</a>
+            <a href="#conteudo" class="btn btn-outline">Ver Conteúdo do Curso</a>
           </div>
         </div>
 
@@ -69,64 +73,13 @@
             Já fui repositor de supermercado.<br>
             <strong>Hoje construo negócios e barbeiros.</strong>
           </blockquote>
-          <span class="founder-quote-author">— Henrique "PG" Santos · Fundador, Street Barbershop</span>
+          <span class="founder-quote-author">Henrique "PG" Santos · Fundador, Street Barbershop</span>
         </div>
-      </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="about">
-      <div class="container about-layout">
-
-        <!-- LEFT: image -->
-        <div class="about-img reveal reveal-left">
-          <img src="./Recpção de frente.jpg"
-            alt="Espaço Street Barbershop">
-          <div class="about-img-badge">
-            <span>desde</span>
-            <strong>2020</strong>
-          </div>
-        </div>
-
-        <!-- RIGHT: text -->
-        <div class="about-text reveal reveal-right">
-          <div class="section-label">NOSSA HISTÓRIA</div>
-          <h2 class="section-title">Sobre a <span class="text-red">STREET BARBERSHOP</span></h2>
-
-          <p class="about-lead">
-            Nascemos do asfalto. Crescemos com disciplina. Hoje somos <strong>referência nacional</strong>
-            em formação de barbeiros profissionais.
-          </p>
-          <p class="about-body">
-            A Street Barbershop surgiu em Jardim América com um propósito claro: provar que técnica,
-            atitude e visão de negócio transformam vidas. Mais do que cortes, ensinamos barbeiros a
-            construir carreiras sólidas — do primeiro cliente à própria barbearia.
-          </p>
-
-          <!-- Mini-stats -->
-          <div class="about-stats">
-            <div class="about-stat">
-              <span class="about-stat-num">10+</span>
-              <span class="about-stat-label">Anos no mercado</span>
-            </div>
-            <div class="about-stat">
-              <span class="about-stat-num">500+</span>
-              <span class="about-stat-label">Barbeiros formados</span>
-            </div>
-            <div class="about-stat">
-              <span class="about-stat-num">30+</span>
-              <span class="about-stat-label">Cidades alcançadas</span>
-            </div>
-          </div>
-
-          <a href="#courses" class="btn btn-gold" style="margin-top:2rem;">Quero fazer parte →</a>
-        </div>
-
       </div>
     </section>
 
     <!-- BARBERS SECTION -->
-    <section id="barbers" class="barbers">
+    <section id="barbers" class="barbers" hidden>
       <div class="container">
         <h2 class="section-title text-center reveal">Nossos <span class="text-red">Barbeiros</span></h2>
         <p class="section-subtitle reveal" style="margin-bottom:0;">Clique em uma carta para conhecer nosso time
@@ -147,83 +100,39 @@
 
           <!-- LEFT: thumbnail / imagem -->
           <div class="course-thumb reveal reveal-left">
-            <div class="course-thumb-wrap">
-              <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=900&auto=format&fit=crop"
-                alt="Curso Street Barbershop">
-              <div class="course-thumb-overlay">
-                <span class="course-thumb-play">▶</span>
-                <span class="course-thumb-label">Prévia do curso</span>
-              </div>
+            <div class="course-thumb-wrap" id="coursePreview">
+              <video class="course-thumb-video" src="./previa-curso.mp4" poster="./previa-curso.jpg"
+                preload="none" playsinline aria-label="Prévia do curso com Henrique PG Santos"></video>
+              <button type="button" class="course-thumb-overlay" aria-label="Assistir à prévia do curso">
+                <span class="course-thumb-play" aria-hidden="true">▶</span>
+                <span class="course-thumb-label">Assista à prévia · 2 min</span>
+              </button>
             </div>
           </div>
 
           <!-- RIGHT: info -->
           <div class="course-info reveal reveal-right">
-            <div class="section-label">FORMAÇÃO PROFISSIONAL</div>
-            <h2 class="section-title">O Curso que vai <span class="text-red">transformar</span> sua carreira</h2>
-            <p class="course-tagline">Do zero ao profissional de alto padrão — técnica, negócio e atitude.</p>
+            <div class="section-label">CURSO ONLINE</div>
+            <h2 class="section-title">O curso que vai <span class="text-red">organizar</span> sua barbearia</h2>
+            <p class="course-tagline">Pra quem cansou de ver a agenda lotada num dia e vazia no outro. Aqui você aprende a montar uma receita que entra todo mês.</p>
 
-            <!-- O que está incluso -->
+            <!-- O que está incluso (baseado nos 5 módulos) -->
             <ul class="course-includes">
-              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <circle cx="6" cy="6" r="3" />
-                    <path d="M8.12 8.12 12 12" />
-                    <path d="M20 4 8.12 15.88" />
-                    <circle cx="6" cy="18" r="3" />
-                    <path d="M8.12 15.88 12 12" />
-                    <path d="M20 20 8.12 8.12" />
-                  </svg></span> Técnicas de degradê e navalha</li>
-              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="m12 14 4-4" />
-                    <path
-                      d="M3.34 19a3 3 0 0 1 0-4l11.66-11.66a2 2 0 0 1 2.83 0l2.83 2.83a2 2 0 0 1 0 2.83L9 14.66a3 3 0 0 1-4 0l-1.66 4.34Z" />
-                    <path d="m17.8 11.2 2.1 2.1" />
-                  </svg></span> Cortes clássicos e tendências atuais</li>
-              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M2 22 17.5 6.5" />
-                    <path d="M11 18.5 20.5 9" />
-                    <path d="M15.5 14.5 21.5 8.5" />
-                    <path d="M18.5 11.5 22.5 7.5" />
-                  </svg></span> Barboterapia & design de barba</li>
-              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <line x1="12" y1="2" x2="12" y2="22" />
-                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                  </svg></span> Gestão e empreendedorismo</li>
-              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
-                    <path d="M12 18h.01" />
-                  </svg></span> Marketing: Instagram e agenda cheia</li>
-              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
-                  </svg></span> Certificação profissional reconhecida</li>
-              <li><span class="ci-icon ci-gold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg></span> <strong>Bônus: Gestão financeira para barbearia</strong></li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" /></svg></span> Plano de assinatura com preço que fecha a conta</li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg></span> Recepção treinada pra vender o plano no balcão</li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8" /><path d="M21 3v5h-5" /></svg></span> Cobrança, renovação e inadimplência sob controle</li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></svg></span> Reels, Google e parcerias locais pra trazer cliente novo</li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18" /><path d="m7 15 4-4 3 3 5-6" /></svg></span> Lucro, ticket médio e ocupação de cada cadeira</li>
+              <li><span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg></span> Plano de ação pros próximos 30 dias</li>
             </ul>
 
             <!-- CTA -->
             <div class="course-cta-block">
-              <p class="cta-urgency">Vagas limitadas — turma fechando em breve!</p>
-              <a href="https://hotmart.com" target="_blank" rel="noopener" class="btn btn-gold btn-lg">
-                GARANTIR MINHA VAGA AGORA
+              <p class="cta-urgency">Acesso liberado assim que o pagamento é aprovado.</p>
+              <a href="https://kiwify.com.br" target="_blank" rel="noopener" class="btn btn-gold btn-lg">
+                QUERO ACESSAR O CURSO
               </a>
-              <p class="cta-sub">✅ Pagamento 100% seguro · Plataforma Hotmart</p>
+              <p class="cta-sub">✅ Pagamento 100% seguro · Plataforma Kiwify</p>
             </div>
           </div>
 
@@ -231,7 +140,7 @@
       </div>
 
       <!-- MÓDULOS / O QUE VAI APRENDER -->
-      <div class="course-modules-section">
+      <div class="course-modules-section" id="conteudo">
         <div class="container">
           <div class="section-label text-center reveal">CONTEÚDO DO CURSO</div>
           <h3 class="subsection-title text-center reveal">O que você vai <span class="text-red">dominar</span></h3>
@@ -239,33 +148,28 @@
           <div class="modules-grid reveal">
             <div class="module-card">
               <div class="module-num">01</div>
-              <h4>Fundamentos & Ferramentas</h4>
-              <p>Higiene, ergonomia, maquinário profissional e montagem da sua bancada.</p>
+              <h4>✅ Assinaturas na barbearia</h4>
+              <p>Como criar planos que dão lucro, definir preços, escolher entre plano limitado e ilimitado e montar as regras de uso.</p>
             </div>
             <div class="module-card">
               <div class="module-num">02</div>
-              <h4>Degradê & Fade de Precisão</h4>
-              <p>Low, mid e high fade com máquina e navalha. Do iniciante ao nível master.</p>
+              <h4>✅ Venda e gestão dos assinantes</h4>
+              <p>Como apresentar o plano, treinar a recepção para vender e controlar cobranças, renovações e inadimplência.</p>
             </div>
             <div class="module-card">
               <div class="module-num">03</div>
-              <h4>Cortes Clássicos & Modernos</h4>
-              <p>Pompadour, undercut, quiff, skin fade e as tendências do mercado.</p>
+              <h4>✅ Clientes novos todo mês</h4>
+              <p>Reels, campanhas, avaliações no Google, parcerias locais e como transformar seguidor em cliente pagante.</p>
             </div>
             <div class="module-card">
               <div class="module-num">04</div>
-              <h4>Barba & Barboterapia</h4>
-              <p>Design de barba, hidratação, tratamentos e ritual de navalha completo.</p>
-            </div>
-            <div class="module-card">
-              <div class="module-num">05</div>
-              <h4>Marketing & Redes Sociais</h4>
-              <p>Como lotar sua agenda, criar conteúdo e atrair clientes de alto ticket.</p>
+              <h4>✅ Financeiro e indicadores</h4>
+              <p>Faturamento, lucro, ticket médio, ocupação das cadeiras e desempenho de cada barbeiro.</p>
             </div>
             <div class="module-card module-card--gold">
-              <div class="module-num">06</div>
-              <h4>Negócio & Empreendedorismo</h4>
-              <p>Precificação, fidelização, abertura de barbearia e gestão financeira.</p>
+              <div class="module-num">05</div>
+              <h4>✅ Operação e crescimento</h4>
+              <p>Processos, padrões, gestão da equipe e um plano de ação para os próximos 30 dias.</p>
             </div>
           </div>
         </div>
@@ -280,15 +184,14 @@
           <div class="who-list">
             <div class="who-item">
               <span class="who-icon">✦</span>
-              <p><strong>Iniciantes</strong> que nunca pegaram numa máquina e querem entrar no mercado.</p>
+              <p><strong>Donos de barbearia e barbeiros</strong> que querem abrir ou organizar o próprio negócio e parar de depender só do movimento do dia.</p>
             </div>
+          </div>
+          <h3 class="subsection-title" style="margin-top:2rem;">Formato</h3>
+          <div class="who-list">
             <div class="who-item">
               <span class="who-icon">✦</span>
-              <p><strong>Barbeiros atuantes</strong> que querem elevar o nível e cobrar mais caro.</p>
-            </div>
-            <div class="who-item">
-              <span class="who-icon">✦</span>
-              <p><strong>Donos de barbearia</strong> que precisam escalar com profissionalismo.</p>
+              <p><strong>5 módulos e 25 aulas em vídeo</strong>, com acesso pela área de membros, no seu ritmo.</p>
             </div>
           </div>
         </div>
@@ -307,16 +210,16 @@
       </div>
 
       <!-- CTA FINAL ÉPICO -->
-      <div class="course-final-cta">
+      <div class="course-final-cta" hidden>
         <div class="container">
           <div class="course-final-cta-inner reveal reveal-scale">
             <div class="cfc-text">
               <p class="cfa-tag">OFERTA LIMITADA</p>
-              <h2>Pronto para transformar sua vida<br>com a <span class="text-red">STREET BARBERSHOP</span>?</h2>
-              <p class="cfa-sub">Junte-se aos +500 barbeiros que já mudaram de patamar.</p>
+              <h2>Pronto pra ter cliente fixo<br>pagando <span class="text-red">todo mês</span>?</h2>
+              <p class="cfa-sub">Mais de 500 barbeiros já passaram pela Street Barbershop.</p>
             </div>
             <div class="cfc-action">
-              <a href="https://hotmart.com" target="_blank" rel="noopener" class="btn btn-gold btn-lg cfa-btn">
+              <a href="https://kiwify.com.br" target="_blank" rel="noopener" class="btn btn-gold btn-lg cfa-btn">
                 QUERO ENTRAR AGORA →
               </a>
             </div>
@@ -326,8 +229,59 @@
 
     </section>
 
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+      <div class="container about-layout">
+
+        <!-- LEFT: image -->
+        <div class="about-img reveal reveal-left">
+          <img src="./Recpção de frente.jpg"
+            alt="Espaço Street Barbershop">
+          <div class="about-img-badge">
+            <span>há mais de</span>
+            <strong>10 anos</strong>
+          </div>
+        </div>
+
+        <!-- RIGHT: text -->
+        <div class="about-text reveal reveal-right">
+          <div class="section-label">NOSSA HISTÓRIA</div>
+          <h2 class="section-title">Sobre a <span class="text-red">STREET BARBERSHOP</span></h2>
+
+          <p class="about-lead">
+            A Street Barbershop começou pequena, em Jardim América. Hoje já são <strong>mais de 500 barbeiros</strong>
+            formados por aqui.
+          </p>
+          <p class="about-body">
+            O Henrique sabe o que é começar do zero. Por isso a gente ensina o corte e também a parte
+            que ninguém mostra: preço, cliente fixo e conta fechando no fim do mês. Do primeiro cliente
+            até a barbearia própria.
+          </p>
+
+          <!-- Mini-stats -->
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="about-stat-num">10+</span>
+              <span class="about-stat-label">Anos no mercado</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">500+</span>
+              <span class="about-stat-label">Barbeiros formados</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-num">30+</span>
+              <span class="about-stat-label">Cidades alcançadas</span>
+            </div>
+          </div>
+
+          <a href="https://kiwify.com.br" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:2rem;">Quero acessar o curso →</a>
+        </div>
+
+      </div>
+    </section>
+
     <!-- CLIENT GALLERY -->
-    <section id="clients" class="clients">
+    <section id="clients" class="clients" hidden>
       <div class="container">
         <div class="section-label reveal">TRANSFORMAÇÕES REAIS</div>
         <h2 class="section-title text-center reveal">Nossos <span class="text-red">Cortes</span></h2>
@@ -387,7 +341,7 @@
     </section>
 
     <!-- LOCALIZAÇÃO PREMIUM -->
-    <section id="location" class="location">
+    <section id="location" class="location" hidden>
       <div class="container">
         <div class="section-label reveal">VENHA CONHECER</div>
         <h2 class="section-title text-center reveal">Onde a <span class="text-red">Mágica acontece</span></h2>
@@ -428,7 +382,7 @@
                   <polyline points="12 6 12 12 16 14" />
                 </svg></span>
               <h3>Horários</h3>
-              <p>Seg – Sex: 9h às 19h<br>Sáb: 9h às 17h</p>
+              <p>Seg a Sex: 9h às 19h<br>Sáb: 9h às 17h</p>
             </div>
             <div class="info-card glass-card">
               <span class="info-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -508,17 +462,13 @@
     <section id="leads" class="leads">
       <div class="container">
         <div class="form-card reveal reveal-scale">
-          <div class="section-label" style="justify-content:center; margin-bottom:1rem;">CONTEÚDO GRATUITO</div>
-          <h2 class="section-title">Receba conteúdo <span class="text-gold">exclusivo</span></h2>
-          <p>Técnicas profissionais gratuitas diretamente no seu e-mail.</p>
-          <form id="lead-form">
-            <input type="text" placeholder="Seu Nome" required>
-            <input type="email" placeholder="Seu Melhor E-mail" required>
-            <input type="tel" placeholder="WhatsApp (DDD + número)" required>
-            <button type="submit" class="btn btn-gold">QUERO FAZER PARTE</button>
-          </form>
-          <p style="margin-top:1rem; font-size:.8rem; color:var(--color-text-muted);">🔒 Seus dados estão seguros. Não
-            enviamos spam.</p>
+          <div class="section-label" style="justify-content:center; margin-bottom:1rem;">ACESSO IMEDIATO</div>
+          <h2 class="section-title">Pare de depender só do <span class="text-gold">movimento do dia</span></h2>
+          <p>São 25 aulas direto ao ponto. Você assiste no seu ritmo e já começa a aplicar na sua barbearia.</p>
+          <a href="https://kiwify.com.br" target="_blank" rel="noopener" class="btn btn-gold btn-lg" style="margin-top:1.5rem;">
+            QUERO ACESSAR O CURSO →
+          </a>
+          <p class="cta-sub" style="margin-top:1rem; color:var(--color-text-muted);">✅ Pagamento 100% seguro · Plataforma Kiwify</p>
         </div>
       </div>
     </section>
@@ -534,8 +484,17 @@
           apresentados são individuais e não garantem os mesmos resultados para todos.</p>
       </div>
     </footer>
+
+    <!-- BARRA FIXA DE COMPRA (só no celular) -->
+    <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+      <div class="sticky-cta-info">
+        <strong>Street Barbershop</strong>
+        <span>5 módulos · 25 aulas</span>
+      </div>
+      <a href="https://kiwify.com.br" target="_blank" rel="noopener" class="btn btn-gold sticky-cta-btn" tabindex="-1">QUERO ACESSAR →</a>
+    </div>
   </div>
-  <script type="module" src="./main.js?v=6"></script>
+  <script type="module" src="./main.js?v=7"></script>
 </body>
 
 </html>

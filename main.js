@@ -345,3 +345,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log('🔥 Street Barbershop — 6 cartas carregadas');
 });
+
+/* =========================================
+   BARRA FIXA DE COMPRA (celular)
+   Aparece depois da hero e some quando a chamada final está na tela
+========================================= */
+function initStickyCta() {
+  const bar = document.getElementById('stickyCta');
+  const hero = document.querySelector('.hero');
+  const finalCta = document.getElementById('leads');
+  if (!bar || !hero) return;
+
+  let pastHero = false;
+  let finalVisible = false;
+  const update = () => {
+    const show = pastHero && !finalVisible;
+    bar.classList.toggle('is-visible', show);
+    bar.setAttribute('aria-hidden', String(!show));
+    bar.querySelector('a').tabIndex = show ? 0 : -1;
+  };
+
+  new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; update(); }).observe(hero);
+  if (finalCta) {
+    new IntersectionObserver(([e]) => { finalVisible = e.isIntersecting; update(); }, { threshold: 0.2 }).observe(finalCta);
+  }
+}
+document.addEventListener('DOMContentLoaded', initStickyCta);
+
+/* =========================================
+   MÓDULOS EM SANFONA (celular)
+   Toca no módulo para abrir a descrição. O primeiro já vem aberto.
+========================================= */
+function initModulesAccordion() {
+  const cards = [...document.querySelectorAll('.module-card')];
+  if (!cards.length) return;
+  const mobile = window.matchMedia('(max-width: 768px)');
+
+  const setOpen = (card, open) => {
+    card.classList.toggle('is-open', open);
+    if (mobile.matches) card.setAttribute('aria-expanded', String(open));
+  };
+
+  const apply = () => {
+    cards.forEach((card, i) => {
+      if (mobile.matches) {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        setOpen(card, i === 0);
+      } else {
+        card.classList.remove('is-open');
+        ['role', 'tabindex', 'aria-expanded'].forEach(a => card.removeAttribute(a));
+      }
+    });
+  };
+
+  cards.forEach(card => {
+    const toggle = () => { if (mobile.matches) setOpen(card, !card.classList.contains('is-open')); };
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+
+  mobile.addEventListener('change', apply);
+  apply();
+}
+document.addEventListener('DOMContentLoaded', initModulesAccordion);
+
+/* =========================================
+   PRÉVIA DO CURSO: toca o vídeo ao clicar no play
+   (preload="none" para não baixar os 13 MB antes da hora)
+========================================= */
+function initCoursePreview() {
+  const wrap = document.getElementById('coursePreview');
+  if (!wrap) return;
+  const video = wrap.querySelector('video');
+  const overlay = wrap.querySelector('.course-thumb-overlay');
+
+  overlay.addEventListener('click', () => {
+    wrap.classList.add('is-playing');
+    video.controls = true;
+    video.play().catch(() => {});
+  });
+  video.addEventListener('ended', () => {
+    wrap.classList.remove('is-playing');
+    video.controls = false;
+    video.load(); // volta para a capa
+  });
+}
+document.addEventListener('DOMContentLoaded', initCoursePreview);
